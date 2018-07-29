@@ -14,7 +14,8 @@ Page({
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    backVisiable: false
   },
 
   /**
@@ -81,14 +82,32 @@ Page({
   },
 
   onChoosePet: function(){
+    this.setData({
+      backVisiable: true
+    })
     this.dialog.showDialog();
   },
-  _cancelEvent: function(){
-    console.log('领养')
+
+  onBackBtnTap: function(){
+    this.setData({
+      backVisiable: false
+    })
     this.dialog.hideDialog();
   },
+
+  _cancelEvent: function(){
+    console.log('领养')
+    this.setData({
+      backVisiable: false
+    })
+    this.dialog.hideDialog();
+  },
+
   _confirmEvent: function(){
     console.log('邀请朋友合养')
+    this.setData({
+      backVisiable: false
+    })
     this.dialog.hideDialog();
   }
 })

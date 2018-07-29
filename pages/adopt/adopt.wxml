@@ -27,4 +27,13 @@
     bind:cancelEvent="_cancelEvent"
     bind:confirmEvent="_confirmEvent"
     ></dialog>
+  <view 
+    wx:if="{{backVisiable}}" 
+    class="back-btn"
+    bindtap="onBackBtnTap"
+    >
+    <text decode='true' class="back-icon">&lt;-</text>
+    <view class="back-text">返回</view>
+  </view>
+  <view class="game-tip">The game tip</view>
 </view>
