@@ -1,0 +1,59 @@
+/* pages/adopt/adopt.wxss */
+.swiper-container{
+  margin-top: 100rpx; 
+  height: 616rpx;
+}
+
+.swiper-image{
+  display: block;
+  margin: 0 auto;
+  width: 616rpx;
+  height: 616rpx;
+}
+
+.adopt-btn{
+  width: 298rpx;
+  height: 100rpx;
+  margin: 40rpx auto;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 48rpx;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 300;
+  line-height: 100rpx;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0px;
+  background: #fa4169;
+  border-radius: 48rpx;
+}
+
+.tip-text{
+  color: #909090;
+  font-family: Montserrat;
+  font-size: 28rpx;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 300;
+  line-height: 48rpx;
+  text-align: center;
+}
+
+.dot-container{
+  display: flex;
+  margin-top: 80rpx;
+  justify-content: center;
+}
+
+.dot-item{
+  width: 16rpx;
+  height: 16rpx;
+  margin: 0 8rpx;
+  border-radius: 50%;
+  background-color: #909090; 
+}
+
+.dot-item.active{
+  background: #4380ff;
+}

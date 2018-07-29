@@ -1,0 +1,10 @@
+{
+  "pages":[
+    "pages/adopt/adopt"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle":"black"
+  }
+}

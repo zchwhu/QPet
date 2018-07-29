@@ -1,0 +1,30 @@
+<!--pages/adopt/adopt.wxml-->
+<view>
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="onSwiperChange" class="swiper-container">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <view class="swiper-item">
+          <image src="{{item}}" class="swiper-image" width="108" height="108"/>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="adopt-btn" bindtap="onChoosePet">领养</view>
+  <view class="tip-text">
+    <text>Choose a pet you love and start your adventure!</text>
+  </view>
+  <view class="dot-container">
+    <block wx:for="{{imgUrls}}">
+      <view class="dot-item {{currentIndex===index? 'active' :''}}" data-index="{{index}}"></view>
+    </block>
+  </view>
+  <dialog 
+    id="dialog"
+    title="确定领养我吗" 
+    confirmBtnText="邀请好友合养" 
+    cancelBtnText="确认领养"
+    bind:cancelEvent="_cancelEvent"
+    bind:confirmEvent="_confirmEvent"
+    ></dialog>
+</view>
