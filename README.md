@@ -1,7 +1,7 @@
 # QPet
 QPet mini program
 
-# 项目结构
+## 项目结构
 1. `pages`文件夹: 小程序主页面
 2. `components`文件夹: 小程序自定义组件
 3. `images`文件夹: 小程序中使用的图片
