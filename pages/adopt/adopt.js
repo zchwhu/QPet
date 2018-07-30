@@ -96,7 +96,6 @@ Page({
   },
 
   _cancelEvent: function(){
-    console.log('领养')
     this.setData({
       backVisiable: false
     })
@@ -104,9 +103,11 @@ Page({
   },
 
   _confirmEvent: function(){
-    console.log('邀请朋友合养')
     this.setData({
       backVisiable: false
+    })
+    wx.redirectTo({
+      url: '../index/index',
     })
     this.dialog.hideDialog();
   }

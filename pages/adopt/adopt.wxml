@@ -22,8 +22,8 @@
   <dialog 
     id="dialog"
     title="确定领养我吗" 
-    confirmBtnText="邀请好友合养" 
-    cancelBtnText="确认领养"
+    confirmBtnText="确认领养" 
+    cancelBtnText="我再看看"
     bind:cancelEvent="_cancelEvent"
     bind:confirmEvent="_confirmEvent"
     ></dialog>

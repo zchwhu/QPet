@@ -1,6 +1,11 @@
 {
   "pages":[
-    "pages/adopt/adopt"
+    "pages/adopt/adopt",
+    "pages/index/index",
+    "pages/trip/trip",
+    "pages/rank/rank",
+    "pages/backpack/backpack",
+    "pages/settings/settings"
   ],
   "window":{
     "backgroundTextStyle":"light",
