@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    ranks:[
+      {
+        petAvatar:"../../images/qpet_1.png",
+        users: [
+          {
+            avatar: "../../images/avatar_1.jpg"
+          }
+        ],
+        praise: 123
+      },
+      {
+        petAvatar: "../../images/qpet_2.png",
+        users: [
+          {
+            avatar: "../../images/avatar_1.jpg"
+          },
+          {
+            avatar: "../../images/avatar_2.jpg"
+          }
+        ],
+        praise: 109
+      },
+      {
+        petAvatar: "../../images/qpet_3.png",
+        users: [
+          {
+            avatar: "../../images/avatar_2.jpg"
+          }
+        ],
+        praise: 90
+      } 
+    ]
   },
 
   /**

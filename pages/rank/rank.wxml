@@ -1,2 +1,34 @@
 <!--pages/rank/rank.wxml-->
-<text>pages/rank/rank.wxml</text>
+<view>
+  <view class="rank-header">
+    <view class="rank-back-btn">
+      <image src="../../images/btn_back.png" />
+    </view>
+    <view class="rank-title">排行榜</view>
+    <view class="rank-share-btn">分享</view>
+  </view>
+  <view class="rank-body">
+    <block wx:for="{{ranks}}">
+      <view class="rank-item">
+        <view class="rank-num">{{index+1}}.</view>
+        <view class="rank-avatar">
+          <view class="rank-pet-avatar">
+            <image src="{{item.petAvatar}}" />
+          </view>
+          <view class="rank-user">
+            <view class="rank-user-list" wx:if="{{item.users.length>1}}">
+              <image src="{{item.users[0].avatar}}"/>
+              <text class="rank-user-plus">+</text>
+              <image src="{{item.users[1].avatar}}"/>
+            </view>
+            <image wx:else src="{{item.users[0].avatar}}" />
+          </view>
+        </view>
+        <view class="rank-praise">
+            <image src="../../images/heart_small.png"/>
+            <view class="rank-praise-num">{{item.praise}}</view>
+          </view>
+      </view>
+    </block>
+  </view>
+</view>
