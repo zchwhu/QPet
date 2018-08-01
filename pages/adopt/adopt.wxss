@@ -94,3 +94,13 @@
   line-height: 36rpx;
   text-align: center;
 }
+
+.input-container{
+  padding: 40rpx 70rpx;
+  border-bottom: 3.4rpx solid #e5e5e5;
+}
+
+.pet-name-input{
+  height: 88rpx;
+  background: #d8d8d8;
+}

@@ -21,7 +21,7 @@
 
 .dialog-container{
   width: 622rpx;
-  height: 268rpx;
+  min-height: 268rpx;
   background: #fff;
   border-radius: 8rpx;
 }
@@ -49,6 +49,7 @@
 .dialog-cancel-btn, .dialog-confirm-btn{
   width: 50%;
   line-height: 136rpx;
+  font-size: 32rpx;
 }
 
 .dialog-confirm-btn{

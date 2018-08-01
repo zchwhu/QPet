@@ -30,6 +30,7 @@ Page({
    */
   onReady: function () {
     this.dialog = this.selectComponent("#dialog");
+    this.inputDialog = this.selectComponent("#inputDialog");
   },
 
   /**
@@ -106,9 +107,18 @@ Page({
     this.setData({
       backVisiable: false
     })
-    wx.redirectTo({
-      url: '../index/index',
-    })
     this.dialog.hideDialog();
+    this.inputDialog.showDialog();
+  },
+
+  _cancelInputEvent: function(){
+    this.inputDialog.hideDialog();
+  },
+
+  _confirmInputEvent: function(){
+    this.inputDialog.hideDialog();
+    wx.redirectTo({
+      url: '../index/index'
+    })
   }
 })

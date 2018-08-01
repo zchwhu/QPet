@@ -1,6 +1,7 @@
 <view class="dialog-wrapper" wx:if="{{visible}}">
   <view class="dialog-container">
     <view class="dialog-header">{{title}}</view>
+    <slot></slot>
     <view class="dialog-body" wx:if="{{content}}">
       {{content}}
     </view>
