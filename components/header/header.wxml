@@ -1,0 +1,5 @@
+<view class="header">
+  <slot name="header-left"></slot>
+  <view class="header-title">{{title}}</view>
+  <slot name="header-right"></slot>
+</view>

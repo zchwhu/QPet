@@ -1,2 +1,16 @@
 <!--pages/settings/settings.wxml-->
-<text>pages/settings/settings.wxml</text>
+<view class="setting-container">
+  <header
+    title="设置"
+  >
+    <view slot="header-left" class="header-back-btn">
+      <image src="../../images/btn_back.png" />
+    </view>
+  </header>
+  <view class="setting-btn-group">
+    <view class="setting-btn">声音</view>
+    <view class="setting-btn">使用说明</view>
+    <view class="setting-btn">版本</view>
+    <view class="setting-btn disabled">退出游戏</view>
+  </view>
+</view>

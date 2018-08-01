@@ -1,0 +1,21 @@
+.header{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 124rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header-title{
+  margin: 0 auto;
+  color: #414852;
+  font-family: Montserrat;
+  font-size:36rpx;
+  font-weight: 400;
+}

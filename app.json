@@ -1,11 +1,11 @@
 {
   "pages":[
+    "pages/settings/settings",
     "pages/adopt/adopt",
     "pages/index/index",
     "pages/trip/trip",
     "pages/rank/rank",
-    "pages/backpack/backpack",
-    "pages/settings/settings"
+    "pages/backpack/backpack"
   ],
   "window":{
     "backgroundTextStyle":"light",
