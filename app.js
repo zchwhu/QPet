@@ -1,15 +1,27 @@
 //app.js
 App({
+  index: 1,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    this.globalData.audio = wx.createInnerAudioContext()
+    this.globalData.audio.volume = 0.8
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res.code)
+        wx.request({
+          url: 'http://118.24.229.188:8080/login/' + res.code,
+          success: function(res){
+             console.log(res)
+             if(res.code === 1){
+
+             } 
+          }
+        })
       }
     })
     // 获取用户信息
@@ -34,6 +46,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    audio: null
   }
 })

@@ -8,9 +8,10 @@
     </view>
   </header>
   <view class="setting-btn-group">
-    <view class="setting-btn">声音</view>
+    <view class="setting-btn" bindtap="onVoiceSettingTap">声音</view>
     <view class="setting-btn">使用说明</view>
     <view class="setting-btn">版本</view>
     <view class="setting-btn disabled">退出游戏</view>
   </view>
 </view>
+

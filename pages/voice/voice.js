@@ -1,4 +1,4 @@
-// pages/settings/settings.js
+// pages/voice/voice.js
 Page({
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  onVoiceSettingTap: function(){
-    wx.navigateTo({
-      url: '../voice/voice',
-    })
   }
 })

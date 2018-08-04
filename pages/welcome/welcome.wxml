@@ -1,0 +1,4 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="welcome-container">
+  <image class="welcome-bg" src="../../images/welcome.png"/>
+</view>

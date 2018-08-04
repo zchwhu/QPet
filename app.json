@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/welcome/welcome",
+    "pages/voice/voice",
     "pages/settings/settings",
     "pages/adopt/adopt",
     "pages/index/index",

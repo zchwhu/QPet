@@ -1,4 +1,5 @@
-// pages/settings/settings.js
+// pages/welcome/welcome.js
+var appInstance = getApp()
 Page({
 
   /**
@@ -12,7 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // setTimeout(()=>{
+    //   wx.navigateTo({
+    //     url: '../adopt/adopt',
+    //   })
+    // }, 2000)
+    console.log(appInstance.globalData.audio.volume)
+    
   },
 
   /**
@@ -62,11 +69,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  onVoiceSettingTap: function(){
-    wx.navigateTo({
-      url: '../voice/voice',
-    })
   }
 })

@@ -1,0 +1,53 @@
+/* pages/voice/voice.wxss */
+.header-back-btn{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.header-back-btn image{
+  width: 100%;
+  height: 100%;
+}
+
+.voice-container{
+  position: relative;
+  height: 100vh;
+  padding-top: 124rpx;
+  box-sizing: border-box;
+}
+
+.voice-bg{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.voice-setting-item{
+  display: flex;
+  align-items: center;
+  width: 656rpx;
+  height: 114rpx;
+  margin: 50rpx auto 0;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #fccacb;
+  border-radius: 48rpx;
+}
+
+.voice-setting-icon{
+  margin-left: 30rpx;
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.voice-slider-container{
+  flex: 1;
+}
+
+.voice-setting-title{
+  color: #fa436a;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 400;
+}
