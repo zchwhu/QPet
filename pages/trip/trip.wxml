@@ -1,2 +1,20 @@
 <!--pages/trip/trip.wxml-->
-<text>pages/trip/trip.wxml</text>
+<view class="trip-container">
+
+  <scroll-view scroll-x="true" style="height: 100%; width:100%" bindscrolltoupper="upper" bindscrolltolower="onToLower" bindscroll="onScroll" scroll-left="{{scrollLeft}}">
+    <image id="map_image" bindload="onImageLoad" style="width:{{img_width}}rpx; height:{{img_height}}vh;" src="../../images/travel_map.png" class="trip-map"></image>
+  </scroll-view>
+
+  <image class='travel_pet' id='id_travel_pet' style='top:{{pet_top}}rpx;left:{{pet_left}}rpx;' src="../../images/travel_pet.png"></image>
+  <common-btn 
+    text="去旅游"
+    extra-class="go-trip-btn"
+    bindtap='onTap' 
+  ></common-btn>
+  <dialog id="dialog" title="确定领养我吗" confirmBtnText="邀请好友合养" cancelBtnText="确认领养" bind:cancelEvent="dialog_cancelEvent" bind:confirmEvent="dialog_confirmEvent"></dialog>
+  <dialog id="giftDialog" title="给我起个名字吧！" confirmBtnText="确定" cancelBtnText="返回" bind:cancelEvent="gift_cancelInputEvent" bind:confirmEvent="gift_confirmInputEvent">
+    <view>
+      <image src="../../images/travel_gift.png" style="width:200rpx;height:200rpx"></image>
+    </view>
+  </dialog>
+</view>

@@ -1,4 +1,6 @@
 // pages/adopt/adopt.js
+const app = getApp()
+
 Page({
 
   /**
@@ -15,7 +17,8 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
-    backVisiable: false
+    backVisiable: false,
+    petName: ""
   },
 
   /**
@@ -117,6 +120,12 @@ Page({
 
   _confirmInputEvent: function(){
     this.inputDialog.hideDialog();
+    const baseUrl = app.globalData.baseUrl
+    const petname = this.data.petName
+    const token = app.globalData.token
+    wx.request({
+      url: baseUrl +"adoptpet/petname="+petname,
+    })
     wx.redirectTo({
       url: '../index/index'
     })

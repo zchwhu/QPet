@@ -1,1 +1,112 @@
 /* pages/backpack/backpack.wxss */
+.backpack-container{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn-group{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80rpx;
+}
+
+.btn{
+  width: 230rpx;
+  height: 100rpx;
+  color: #ffffff;
+  background: #558cff;
+  font-family: PingFangSC;
+  font-size: 34rpx;
+  font-weight: 400;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 48rpx;
+}
+
+.btn.active{
+  background: #fa4169;
+}
+
+.pet-body{
+  margin-top: 80rpx;
+  text-align: center;
+}
+
+.pet-body image{
+  width: 700rpx;
+  height: 700rpx;
+}
+
+.back-btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 144rpx;
+  line-height: 144rpx;
+  text-align: center;
+  background: #fa4169;
+  color: #fff;
+}
+
+.cloth-dialog{
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate3d(-50%,-50%,0);
+  width: 514rpx;
+  height: 450rpx;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  overflow: scroll;
+}
+
+.cloth-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.cloth-group{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.cloth-inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+    background: #d3d3d3;
+    text-align: center;
+}
+
+.cloth-item{
+  display: inline-block;
+  width: 50%;
+  height: 210rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+
+.cloth-item image{
+  width:  180rpx;
+  height: 180rpx;
+}
+
+.back-btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 144rpx;
+  line-height: 144rpx;
+  font-size: 40rpx;
+  text-align: center;
+  background: #fa4169;
+  color: #fff;
+}

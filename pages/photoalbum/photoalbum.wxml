@@ -1,0 +1,16 @@
+<!--pages/photoalbum/photoalbum.wxml-->
+
+<scroll-view class="cloth-container" scroll-x="true" style="width: {{screenNum}}%">
+  <view class="cloth-wrapper">
+    <block wx:for="{{imgs}}" wx:for-item="clothes">
+      <view class="cloth-group">
+        <block wx:for="{{clothes}}" wx:for-item="cloth">
+          <view class="cloth-item">
+            <image src="{{cloth.ImgUrl}}" data-url='{{item.ImgUrl}}' bindtap="imgPreview" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<view class="back-btn" bindtap="backHome">返回我的主页</view>

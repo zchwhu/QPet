@@ -1,0 +1,38 @@
+/* pages/version/version.wxss */
+.version-container{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 120rpx;
+  background: #fccacb;
+  color: #333;
+}
+
+.version-info{
+  text-align: center;
+}
+
+.logo{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.version{
+  margin-top: 40rpx;
+}
+
+.member{
+  padding: 70rpx;
+  text-align: center;
+}
+
+.title{
+  margin-bottom: 30rpx;
+  font-size: 60rpx;
+  font-weight: 700;
+}
+
+.text{
+  line-height: 60rpx;
+  font-size: 34rpx;
+}

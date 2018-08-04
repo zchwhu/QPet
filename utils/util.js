@@ -14,6 +14,27 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const groupArray = (data, cols) => {
+  const r = data.reduce((r, t) => {
+    r.current.push(t);
+    if (r.current.length === cols) {
+      r.list.push(r.current);
+      r.current = [];
+    }
+    return r;
+  }, {
+    list: [],
+    current: []
+  });
+
+  if (r.current.length) {
+    r.list.push(r.current);
+  }
+
+  return r.list;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  groupArray: groupArray
 }

@@ -25,8 +25,10 @@
         <view class="pet-btn" bindtap="onRankBtnTap">排行榜</view>
     </view>
     <view class="pet-image">
+      <image src="../../images/cloud.png" class="pet-talk" />
       <image src="../../images/pet.png" class="pet-avatar"/>
       <image src="../../images/pet_bg.png" class="pet-bg" />
+      <view class="pet-word">测试一下字数测试一下字数测试一下字数</view>
     </view>
     <view class="step-container">
       <view class="step-text">当前步数</view>
@@ -37,3 +39,4 @@
     </view>
   </view>
 </view>
+ 

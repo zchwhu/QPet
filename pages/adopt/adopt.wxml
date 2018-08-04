@@ -1,12 +1,10 @@
 <!--pages/adopt/adopt.wxml-->
 <view>
-
-  <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="onSwiperChange" class="swiper-container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="onSwiperChange" class="swiper-container">
     <block wx:for="{{imgUrls}}">
       <swiper-item>
         <view class="swiper-item">
-          <image src="{{item}}" class="swiper-image" width="108" height="108"/>
+          <image src="{{item}}" class="swiper-image" width="108" height="108" />
         </view>
       </swiper-item>
     </block>
@@ -20,35 +18,16 @@
       <view class="dot-item {{currentIndex===index? 'active' :''}}" data-index="{{index}}"></view>
     </block>
   </view>
-  <dialog 
-    id="dialog"
-    title="确定领养我吗" 
-    confirmBtnText="确认领养" 
-    cancelBtnText="我再看看"
-    bind:cancelEvent="_cancelEvent"
-    bind:confirmEvent="_confirmEvent"
-    >
-    </dialog>
-     <dialog 
-    id="inputDialog"
-    title="给我起个名字吧！" 
-    confirmBtnText="确定" 
-    cancelBtnText="返回"
-    bind:cancelEvent="_cancelInputEvent"
-    bind:confirmEvent="_confirmInputEvent"
-    >
-      <view class="input-container">
-        <input type="text" class="pet-name-input" placeholder="请输入宠物昵称"/>
-      </view>
-    </dialog>
-  <view 
-    wx:if="{{backVisiable}}" 
-    class="back-btn"
-    bindtap="onBackBtnTap"
-    >
+  <dialog id="dialog" title="确定领养我吗" confirmBtnText="确认领养" cancelBtnText="我再看看" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
+  </dialog>
+  <dialog id="inputDialog" title="给我起个名字吧！" confirmBtnText="确定" cancelBtnText="返回" bind:cancelEvent="_cancelInputEvent" bind:confirmEvent="_confirmInputEvent">
+    <view class="input-container">
+      <input type="text" class="pet-name-input" placeholder="请输入宠物昵称" />
+    </view>
+  </dialog>
+  <view wx:if="{{backVisiable}}" class="back-btn" bindtap="onBackBtnTap">
     <text decode='true' class="back-icon">&lt;-</text>
     <view class="back-text">返回</view>
   </view>
   <view class="game-tip">The game tip</view>
 </view>
-

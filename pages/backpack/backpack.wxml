@@ -1,2 +1,29 @@
 <!--pages/backpack/backpack.wxml-->
-<text>pages/backpack/backpack.wxml</text>
+<view class="backpack-container">
+  <view class="btn-group">
+    <view bindtap="goToWear" class="btn {{visible?'active':''}}" bindtap="onChangeBtnTap">更换换装</view>
+    <view bindtap="GotoPhotograpg" class="btn">我的相册</view>
+  </view>
+  <view class="pet-body">
+    <image src='{{img}}' bindtap="imgPreview" data-url='{{img}}'/>
+  </view>
+  <view class="back-btn" bindtap="backHome">返回我的主页</view>
+</view>
+
+<view class="cloth-dialog" wx:if="{{visible}}">
+  <scroll-view class="cloth-container" scroll-x="true" style="width: {{screenNum}}%">
+    <view class="cloth-wrapper">
+      <block wx:for="{{imgs}}" wx:for-item="clothes">
+        <view class="cloth-group">
+          <block wx:for="{{clothes}}" wx:for-item="cloth">
+            <view class="cloth-item">
+              <view class="cloth-inner">
+                <image src="{{cloth}}" data-url='{{cloth}}' bindtap="changeCloth" />
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

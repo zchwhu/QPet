@@ -1,0 +1,7 @@
+<view class="common-btn-container extra-class">
+  <view 
+    class="common-btn" 
+    style="width: {{width}}rpx;height:{{height}}rpx;line-height:{{height}}rpx">
+    {{text}}
+  </view>
+</view>

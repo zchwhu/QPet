@@ -1,17 +1,20 @@
 {
-  "pages":[
+  "pages": [
     "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/version/version",
+    "pages/guide/guide",
+    "pages/backpack/backpack",
+    "pages/photoalbum/photoalbum",
+    "pages/trip/trip",
+    "pages/adopt/adopt",
     "pages/voice/voice",
     "pages/settings/settings",
-    "pages/adopt/adopt",
-    "pages/index/index",
-    "pages/trip/trip",
-    "pages/rank/rank",
-    "pages/backpack/backpack"
+    "pages/rank/rank"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-  "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
