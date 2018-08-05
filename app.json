@@ -1,16 +1,16 @@
 {
   "pages": [
     "pages/welcome/welcome",
-    "pages/index/index",
-    "pages/version/version",
     "pages/guide/guide",
-    "pages/backpack/backpack",
-    "pages/photoalbum/photoalbum",
+    "pages/index/index",
     "pages/trip/trip",
+    "pages/version/version",
+    "pages/rank/rank",
     "pages/adopt/adopt",
     "pages/voice/voice",
-    "pages/settings/settings",
-    "pages/rank/rank"
+    "pages/backpack/backpack",
+    "pages/photoalbum/photoalbum",
+    "pages/settings/settings"
   ],
   "window": {
     "backgroundTextStyle": "light",

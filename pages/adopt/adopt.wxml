@@ -22,7 +22,7 @@
   </dialog>
   <dialog id="inputDialog" title="给我起个名字吧！" confirmBtnText="确定" cancelBtnText="返回" bind:cancelEvent="_cancelInputEvent" bind:confirmEvent="_confirmInputEvent">
     <view class="input-container">
-      <input type="text" class="pet-name-input" placeholder="请输入宠物昵称" />
+      <input type="text" bindinput="bindKeyInput" class="pet-name-input" placeholder="请输入宠物昵称" />
     </view>
   </dialog>
   <view wx:if="{{backVisiable}}" class="back-btn" bindtap="onBackBtnTap">

@@ -40,7 +40,7 @@
 
 .rank-body{
   min-height: 100vh;
-  padding-top: 124rpx;
+  /* padding-top: 124rpx; */
   box-sizing: border-box;
   background: #f7f7fb;
 }
@@ -124,4 +124,8 @@
   font-size: 28rpx;
   text-align: center;
   color: #fff;
+}
+
+.active .rank-praise-num{
+  color: #333;
 }

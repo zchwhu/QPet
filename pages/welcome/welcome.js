@@ -59,17 +59,30 @@ Page({
     this.setData({
       visible: false
     })
-    wx.request({
-      url: 'http://118.24.229.188:8080/jiemi',
-      method: "POST",
-      data:{
-        token: app.globalData.token,
-        iv: e.detail.iv,
-        encryptedData: e.detail.encryptedData
-      },
-      success: function(res){
-        console.log(res)
-      }
-    })
+    if (app.globalData.isLogin === "0"){
+      wx.request({
+        url: 'http://118.24.229.188:8080/jiemi',
+        method: "POST",
+        data: {
+          openid: app.globalData.openid,
+          headurl: e.detail.userInfo.avatarUrl,
+          username: e.detail.userInfo.nickName
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          console.log(res)
+          wx.navigateTo({
+            url: '../adopt/adopt',
+          })
+        }
+      })
+    }else{
+      wx.navigateTo({
+        url: '../index/index',
+      })
+    }
+    
   }
 })

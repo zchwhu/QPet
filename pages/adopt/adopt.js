@@ -18,7 +18,7 @@ Page({
     interval: 5000,
     duration: 1000,
     backVisiable: false,
-    petName: ""
+    petName: "测试名字"
   },
 
   /**
@@ -83,6 +83,21 @@ Page({
     this.setData({
       currentIndex: current
     })
+
+    console.log('currentIndex: ' + this.data.currentIndex);
+    //每个宠物播放一个打招呼声效
+    switch (this.data.currentIndex) {
+      case 0:
+        app.pet_1_hi.play();
+        break;
+      case 1:
+        app.pet_2_hi.play();
+        break;
+      case 2:
+        app.pet_3_hi.play();
+        break;
+      // default: console.log("Error when playing hello sound.")
+    }
   },
 
   onChoosePet: function(){
@@ -124,10 +139,22 @@ Page({
     const petname = this.data.petName
     const token = app.globalData.token
     wx.request({
-      url: baseUrl +"adoptpet/petname="+petname,
+      url: baseUrl +"adoptpet",
+      method: "POST",
+      data: {
+        openid: app.globalData.openid,
+        petname: this.data.petName || '测试一下'
+      }
     })
     wx.redirectTo({
       url: '../index/index'
     })
+  },
+
+  bindKeyInput: function () {
+    this.setData({
+      petName: e.detail.value
+    })
+    console.log(this.data.petName)
   }
 })

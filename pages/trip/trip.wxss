@@ -36,3 +36,21 @@
   transform: translateX(-50%);
   bottom: 70rpx;
 }
+
+@keyframes move{
+  0%{
+    transform: translateX(100rpx);
+    /* animation-timing-function: linear; */
+  }
+  70%{
+    transform: translateY(-20rpx);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.25);
+  }
+  100%{
+    transform: translateY(0)
+  }
+}
+
+.move{
+  animation: move 2.8s;
+}

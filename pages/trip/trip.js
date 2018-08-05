@@ -9,7 +9,7 @@ Page({
     scrollLeft: 0,
     imageHistoryRect: {},
     pet_top: 1000,
-    pet_left: 650,
+    pet_left: 620,
     tme_left: 89.1338,
     tme_top: 77.6007,
     sng_left: 82.0078,
@@ -38,95 +38,69 @@ Page({
     top_diff: 0,
     destination: -1,
     pet_stickEnable: 0,
-    screen_height: 0
+    screen_height: 0,
+    trip_begin: 1,
+    trip_clothes: "../../images/trip_clothes.png"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
     this.dialog = this.selectComponent("#dialog");
     this.giftDialog = this.selectComponent("#giftDialog")
 
   },
 
   /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
-  onSwiperChange: function(e) {
-    var current = e.detail.current;
-    this.setData({
-      currentIndex: current
-    })
-  },
-
-  onChoosePet: function() {
-    this.setData({
-      backVisiable: true
-    })
-    this.dialog.showDialog();
-  },
-
-  onBackBtnTap: function() {
+  onBackBtnTap: function () {
     this.setData({
       backVisiable: false
     })
     this.dialog.hideDialog();
   },
 
-  _cancelEvent: function() {
+  _cancelEvent: function () {
     this.setData({
       backVisiable: false
     })
     this.dialog.hideDialog();
   },
-  onImageLoad: function(e) {
+  onImageLoad: function (e) {
     var $width = e.detail.width, //获取图片真实宽度
       $height = e.detail.height,
       ratio = $width / $height; //图片的真实宽高比例
@@ -139,7 +113,7 @@ Page({
       }
     })
   },
-  onTap: function(e) {
+  onTap: function (e) {
     // console.log(e)
     // var destination = 0;
     var k = -1;
@@ -147,53 +121,9 @@ Page({
       k = Math.floor(5 * Math.random())
     } while (k == this.data.destination)
     this.data.destination = k
+    /**移动阶段 */
     // console.log(this.data.destination)
-    switch (this.data.destination) {
-      case 0:
-        // this.timer1 = setInterval(this.scrollHistoryView, 100)
-        console.log('tme')
-        this.setData({
-          des_top: this.data.tme_top,
-          des_left: this.data.tme_left
-        })
-
-        break;
-      case 1:
-        // this.timer1 = setInterval(this.scrollHistoryView, 100)
-        console.log('sng')
-        this.setData({
-          des_top: this.data.sng_top,
-          des_left: this.data.sng_left
-        })
-        break;
-      case 2:
-        // this.timer1 = setInterval(this.scrollHistoryView, 100)
-        console.log('teg')
-        this.setData({
-          des_top: this.data.teg_top,
-          des_left: this.data.teg_left
-        })
-
-        break;
-      case 3:
-        console.log('ieg')
-        this.setData({
-          des_top: this.data.ieg_top,
-          des_left: this.data.ieg_left
-        })
-
-        break;
-      case 4:
-        console.log('tencent')
-        this.setData({
-          des_top: this.data.tencent_top,
-          des_left: this.data.tencent_left
-        })
-
-        break;
-      default:
-        break;
-    }
+    this.switchDes();
     console.log(this.data.des_top)
     console.log(this.data.des_left)
     this.setData({
@@ -205,49 +135,13 @@ Page({
     this.setData({
       pet_stickEnable: 0
     })
-    // console.log(1)
+    console.log(1)
     this.timer_trip = setInterval(this.onMoveDestination, 200)
+    console.log('after_interval')
   },
-  onScroll: function(e) {
+  onScroll: function (e) {
     if (this.data.pet_stickEnable > 0) {
-      switch (this.data.destination) {
-        case 0:
-          this.setData({
-            des_top: this.data.tme_top,
-            des_left: this.data.tme_left
-          })
-
-          break;
-        case 1:
-          this.setData({
-            des_top: this.data.sng_top,
-            des_left: this.data.sng_left
-          })
-          break;
-        case 2:
-          this.setData({
-            des_top: this.data.teg_top,
-            des_left: this.data.teg_left
-          })
-
-          break;
-        case 3:
-          this.setData({
-            des_top: this.data.ieg_top,
-            des_left: this.data.ieg_left
-          })
-
-          break;
-        case 4:
-          this.setData({
-            des_top: this.data.tencent_top,
-            des_left: this.data.tencent_left
-          })
-
-          break;
-        default:
-          break;
-      }
+      this.switchDes();
       this.setData({
         pet_left: this.data.des_left,
         pet_top: this.data.des_top
@@ -269,13 +163,13 @@ Page({
     // console.log(this.data.scrollWidth)
 
   },
-  onShow: function() { //在Page显示的时候 启动timer. 可以直接this.timer赋值,不用声明
+  onShow: function () { //在Page显示的时候 启动timer. 可以直接this.timer赋值,不用声明
 
     this.timer = setInterval(this.scrollHistoryView, 100)
     var scheight = 0;
     var pixel_ = 0
     wx.getSystemInfo({
-      success: function(res) {
+      success: function (res) {
         console.log(res.screenHeight)
         console.log(res.pixelRatio)
         scheight = res.screenHeight
@@ -286,12 +180,18 @@ Page({
       screen_height: scheight * pixel_,
     })
   },
-  onHide: function() { //在Page隐藏的时候, 关闭timer
+  onHide: function () { //在Page隐藏的时候, 关闭timer
     clearInterval(this.timer)
   },
-  scrollHistoryView: function() { //自动滚动scroll-view代码
+  scrollHistoryView: function () { //自动滚动scroll-view代码
     if (this.data.scrollLeft > 750 - this.data.scrollWidth) {
       clearInterval(this.timer)
+      if (this.data.trip_begin == 1) {
+        this.setData({
+          trip_begin: 0
+        })
+        // this.onTap();
+      }
     }
 
     var scleft = this.data.scrollLeft;
@@ -305,50 +205,22 @@ Page({
 
   },
 
-  upper: function() {
+  upper: function () {
     clearInterval(this.timer)
   },
-  onMoveDestination: function() {
-    if (Math.abs(this.data.pet_left - this.data.des_left) <= Math.abs(this.data.left_diff / 6)) {
-      switch (this.data.destination) {
-        case 0:
-          console.log('tme')
-          this.setData({
-            des_top: this.data.tme_top,
-            des_left: this.data.tme_left
-          })
-          break;
-        case 1:
-          console.log('sng')
-          this.setData({
-            des_top: this.data.sng_top,
-            des_left: this.data.sng_left
-          })
-          break;
-        case 2:
-          console.log('teg')
-          this.setData({
-            des_top: this.data.teg_top,
-            des_left: this.data.teg_left
-          })
-          break;
-        case 3:
-          console.log('ieg')
-          this.setData({
-            des_top: this.data.ieg_top,
-            des_left: this.data.ieg_left
-          })
-          break;
-        case 4:
-          console.log('tencent')
-          this.setData({
-            des_top: this.data.tencent_top,
-            des_left: this.data.tencent_left
-          })
-          break;
-        default:
-          break;
-      }
+  onMoveDestination: function () {
+    if ((this.data.pet_left) == this.data.des_left &&
+      this.data.pet_top == this.data.des_top) {
+      clearInterval(this.timer_trip);
+      var that = this
+      setTimeout(
+        function () {
+          that.giftDialog.showDialog();
+        }, 2000
+      )
+
+    } else if (Math.abs(this.data.pet_left - this.data.des_left) <= Math.abs(this.data.left_diff / 6)) {
+      this.switchDes();
       if (this.data.des_left > 650) {
         this.setData({
           scrollLeft: this.data.scrollLeft +
@@ -356,219 +228,37 @@ Page({
           // pet_top: this.data.des_top,
           left_diff: -this.data.left_diff
         })
-        switch (this.data.destination) {
-          case 0:
-            console.log('tme')
-            this.setData({
-              des_top: this.data.tme_top,
-              des_left: this.data.tme_left
-            })
-            break;
-          case 1:
-            console.log('sng')
-            this.setData({
-              des_top: this.data.sng_top,
-              des_left: this.data.sng_left
-            })
-            break;
-          case 2:
-            console.log('teg')
-            this.setData({
-              des_top: this.data.teg_top,
-              des_left: this.data.teg_left
-            })
-            break;
-          case 3:
-            console.log('ieg')
-            this.setData({
-              des_top: this.data.ieg_top,
-              des_left: this.data.ieg_left
-            })
-            break;
-          case 4:
-            console.log('tencent')
-            this.setData({
-              des_top: this.data.tencent_top,
-              des_left: this.data.tencent_left
-            })
-            break;
-          default:
-            break;
-        }
+        this.switchDes();
       } else if (this.data.des_left < 0) {
-        switch (this.data.destination) {
-          case 0:
-            console.log('tme')
-            this.setData({
-              des_top: this.data.tme_top,
-              des_left: this.data.tme_left
-            })
-            break;
-          case 1:
-            console.log('sng')
-            this.setData({
-              des_top: this.data.sng_top,
-              des_left: this.data.sng_left
-            })
-            break;
-          case 2:
-            console.log('teg')
-            this.setData({
-              des_top: this.data.teg_top,
-              des_left: this.data.teg_left
-            })
-            break;
-          case 3:
-            console.log('ieg')
-            this.setData({
-              des_top: this.data.ieg_top,
-              des_left: this.data.ieg_left
-            })
-            break;
-          case 4:
-            console.log('tencent')
-            this.setData({
-              des_top: this.data.tencent_top,
-              des_left: this.data.tencent_left
-            })
-            break;
-          default:
-            break;
-        }
+        this.switchDes();
         this.setData({
           scrollLeft: this.data.scrollLeft +
             this.data.left_diff / 6,
           // pet_top: this.data.des_top,
           left_diff: -this.data.left_diff
         })
-        switch (this.data.destination) {
-          case 0:
-            console.log('tme')
-            this.setData({
-              des_top: this.data.tme_top,
-              des_left: this.data.tme_left
-            })
-            break;
-          case 1:
-            console.log('sng')
-            this.setData({
-              des_top: this.data.sng_top,
-              des_left: this.data.sng_left
-            })
-            break;
-          case 2:
-            console.log('teg')
-            this.setData({
-              des_top: this.data.teg_top,
-              des_left: this.data.teg_left
-            })
-            break;
-          case 3:
-            console.log('ieg')
-            this.setData({
-              des_top: this.data.ieg_top,
-              des_left: this.data.ieg_left
-            })
-            break;
-          case 4:
-            console.log('tencent')
-            this.setData({
-              des_top: this.data.tencent_top,
-              des_left: this.data.tencent_left
-            })
-            break;
-          default:
-            break;
-        }
+        this.switchDes();
       } else {
-        switch (this.data.destination) {
-          case 0:
-            console.log('tme')
-            this.setData({
-              des_top: this.data.tme_top,
-              des_left: this.data.tme_left
-            })
-            break;
-          case 1:
-            console.log('sng')
-            this.setData({
-              des_top: this.data.sng_top,
-              des_left: this.data.sng_left
-            })
-            break;
-          case 2:
-            console.log('teg')
-            this.setData({
-              des_top: this.data.teg_top,
-              des_left: this.data.teg_left
-            })
-            break;
-          case 3:
-            console.log('ieg')
-            this.setData({
-              des_top: this.data.ieg_top,
-              des_left: this.data.ieg_left
-            })
-            break;
-          case 4:
-            console.log('tencent')
-            this.setData({
-              des_top: this.data.tencent_top,
-              des_left: this.data.tencent_left
-            })
-            break;
-          default:
-            break;
-        }
+        this.switchDes();
         this.setData({
           pet_left: this.data.des_left,
           pet_top: this.data.des_top,
           /**使宠物相对图片静止 */
           pet_stickEnable: 1
         })
-        clearInterval(this.timer_trip);
-        setTimeout(function() {
-          this.dialog.showDialog();
-        }.bind(this), 1000)
-        switch (this.data.destination) {
-          case 0:
-            console.log('tme')
-            this.setData({
-              des_top: this.data.tme_top,
-              des_left: this.data.tme_left
-            })
-            break;
-          case 1:
-            console.log('sng')
-            this.setData({
-              des_top: this.data.sng_top,
-              des_left: this.data.sng_left
-            })
-            break;
-          case 2:
-            console.log('teg')
-            this.setData({
-              des_top: this.data.teg_top,
-              des_left: this.data.teg_left
-            })
-            break;
-          case 3:
-            console.log('ieg')
-            this.setData({
-              des_top: this.data.ieg_top,
-              des_left: this.data.ieg_left
-            })
-            break;
-          case 4:
-            console.log('tencent')
-            this.setData({
-              des_top: this.data.tencent_top,
-              des_left: this.data.tencent_left
-            })
-            break;
-          default:
-            break;
-        }
+        /***请求阶段 */
+        // this.inputDialog.hideDialog();
+        // const trip_Url = app.globalData.baseUrl
+        // // const petname = this.data.petName
+        // const token = app.globalData.token
+        // this.giftDialog.showDialog().bind(this);
+        // // setTimeout(function () {
+        // //   this.giftDialog.showDialog();
+        // // }.bind(this), 1000)
+        // wx.request({
+        //   url: trip_Url + "GetMapPetInfo/token=" + token,
+        // })
+        this.switchDes();
       }
 
     } else {
@@ -594,16 +284,58 @@ Page({
         })
     }
   },
-  dialog_cancelEvent: function() {
+  dialog_confirmInputEvent: function () {
     var sse = "sse"
     // console.log(sse)
     this.dialog.hideDialog()
-    this.giftDialog.showDialog()
   },
-  gift_cancelInputEvent: function() {
-    this.giftDialog.hideDialog();
+  dialog_cancelInputEvent: function () {
+    this.dialog.hideDialog();
   },
-  gift_confirmInputEvent: function() {
+  gift_confirmInputEvent: function () {
+    console.log('tap')
     this.giftDialog.hideDialog();
+    this.dialog.showDialog();
+  },
+  switchDes: function () {
+    switch (this.data.destination) {
+      case 0:
+        console.log('tme')
+        this.setData({
+          des_top: this.data.tme_top,
+          des_left: this.data.tme_left
+        })
+        break;
+      case 1:
+        console.log('sng')
+        this.setData({
+          des_top: this.data.sng_top,
+          des_left: this.data.sng_left
+        })
+        break;
+      case 2:
+        console.log('teg')
+        this.setData({
+          des_top: this.data.teg_top,
+          des_left: this.data.teg_left
+        })
+        break;
+      case 3:
+        console.log('ieg')
+        this.setData({
+          des_top: this.data.ieg_top,
+          des_left: this.data.ieg_left
+        })
+        break;
+      case 4:
+        console.log('tencent')
+        this.setData({
+          des_top: this.data.tencent_top,
+          des_left: this.data.tencent_left
+        })
+        break;
+      default:
+        break;
+    }
   }
 })

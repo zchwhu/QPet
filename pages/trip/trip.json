@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "dialog": "../../../components/dialog/dialog",
-    "common-btn": "../../../components/common-btn/common-btn"
+    "dialog": "../../../components/travel_dialog/travel_dialog",
+    "common-btn": "../../../components/common-btn/common-btn",
+    "gift_dialog": "../../../components/gift_dialog/gift_dialog"
   }
 }

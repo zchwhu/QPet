@@ -6,9 +6,10 @@
   </view>
   <view class="member">
     <view class="text title">开发人员:</view>
-    <view class="text">前端：赵春晖，鲁宵，张钊晋，马斯霈</view>
-    <view class="text">后台: 曹启，刘敏</view>
-    <view class="text">产品：戴榕，秦宣龙</view>
-    <view class="text">视频：路傲轩</view>
+    <view class="text">设计：曾逸舒(deliazeng)</view>
+    <view class="text">前端：赵春晖(itachizhao)，鲁霄(shawlu)，张钊晋(remozhang)，马斯霈(mackma)</view>
+    <view class="text">后台: 曹启(chasecao)，刘敏(allenmliu)</view>
+    <view class="text">产品：戴榕(banyadai)，秦宣龙(dexterqin)</view>
+    <view class="text">视频：路傲轩(devinlu)</view>
   </view>
 </view>

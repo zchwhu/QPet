@@ -13,15 +13,37 @@
         <view class="voice-slider-container">
           <view class="body-view">
             <slider 
-              step="1"
+              step="0.01"
               activeColor="#fa436a"
               block-size="12"
               backgroundColor="#fff"
+              value="0.8"
+              bindchanging="backgroundVolumeChange"
+              min="0"
+              max="1"
             />
           </view>
         </view>
       </view>
       <view class="voice-setting-item">
+        <view class="voice-setting-title">游戏音效</view>
+        <image class="voice-setting-icon" src="../../images/voice_icon.png" />
+        <view class="voice-slider-container">
+          <view class="body-view">
+            <slider 
+              step="0.01"
+              activeColor="#fa436a"
+              block-size="12"
+              backgroundColor="#fff"
+              value="0.8"
+              bindchanging="soundFXVolumeChange"
+              min="0"
+              max="1"
+            />
+          </view>
+        </view>
+      </view>
+      <!-- <view class="voice-setting-item">
         <view class="voice-setting-title">背景音乐</view>
         <image class="voice-setting-icon" src="../../images/voice_icon.png" />
         <view class="voice-slider-container">
@@ -34,21 +56,7 @@
             />
           </view>
         </view>
-      </view>
-      <view class="voice-setting-item">
-        <view class="voice-setting-title">背景音乐</view>
-        <image class="voice-setting-icon" src="../../images/voice_icon.png" />
-        <view class="voice-slider-container">
-          <view class="body-view">
-            <slider 
-              step="1"
-              activeColor="#fa436a"
-              block-size="12"
-              backgroundColor="#fff"
-            />
-          </view>
-        </view>
-      </view>
+      </view> -->
     </view>
 
     <view class="voice-bg">

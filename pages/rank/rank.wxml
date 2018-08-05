@@ -1,12 +1,5 @@
 <!--pages/rank/rank.wxml-->
 <view>
-  <view class="rank-header">
-    <view class="rank-back-btn">
-      <image src="../../images/btn_back.png" />
-    </view>
-    <view class="rank-title">排行榜</view>
-    <view class="rank-share-btn">分享</view>
-  </view>
   <view class="rank-body">
     <block wx:for="{{ranks}}">
       <view class="rank-item">
@@ -24,8 +17,9 @@
             <image wx:else src="{{item.users[0].avatar}}" />
           </view>
         </view>
-        <view class="rank-praise">
-            <image src="../../images/heart_small.png"/>
+        <view class="rank-praise {{!item.hasClicked?'active':''}}" bindtap="onPraiseBtnTap" data-index="{{index}}">
+            <image src="../../images/heart_small_blank.png" wx:if="{{!item.hasClicked}}"/>
+            <image src="../../images/heart_small.png" wx:else/>
             <view class="rank-praise-num">{{item.praise}}</view>
           </view>
       </view>

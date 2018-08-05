@@ -1,0 +1,13 @@
+<view class="dialog-wrapper" wx:if="{{visible}}">
+  <view class="dialog-container grow">
+    <slot></slot>
+    <view class="dialog-body" wx:if="{{content}}">
+      {{content}}
+    </view>
+    <!-- <view class="dialog-footer"> -->
+      <view class="dialog-confirm-btn"
+      style="width: {{width}}rpx;height:{{height}}rpx;line-height:{{height}}rpx"
+      bindtap="onConfirmBtnTap">{{confirmBtnText}}</view>
+    <!-- </view> -->
+  </view>
+</view>

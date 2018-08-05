@@ -13,7 +13,8 @@ Page({
             avatar: "../../images/avatar_1.jpg"
           }
         ],
-        praise: 123
+        praise: 123,
+        hasClicked: false
       },
       {
         petAvatar: "../../images/qpet_2.png",
@@ -25,7 +26,8 @@ Page({
             avatar: "../../images/avatar_2.jpg"
           }
         ],
-        praise: 109
+        praise: 109,
+        hasClicked: false
       },
       {
         petAvatar: "../../images/qpet_3.png",
@@ -34,7 +36,8 @@ Page({
             avatar: "../../images/avatar_2.jpg"
           }
         ],
-        praise: 90
+        praise: 90,
+        hasClicked: false
       } 
     ]
   },
@@ -43,7 +46,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -93,5 +96,17 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onPraiseBtnTap: function(e){
+    var index = e.currentTarget.dataset.index;
+    var ranks = this.data.ranks;
+    if (!ranks[index].hasClicked){
+      ranks[index].hasClicked = true
+      console.log(index)
+      this.setData({
+        ranks: ranks
+      })
+    }
   }
 })

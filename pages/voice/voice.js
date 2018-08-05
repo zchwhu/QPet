@@ -1,66 +1,28 @@
 // pages/voice/voice.js
+// 获得App实例以修改音量参数
+var app = getApp()
+// var foo = app.globalData.bgmVol
+// var fooo = app.globalData.soundEffectVolsoundEffectVol
+var foo = app.bgm
+let bgmVolume = "bgm.volume"
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-  
+    // console.log(app.bgm.volume)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  backgroundVolumeChange: function (e) {
+    console.log("Changing bgm volume:" + e.detail.value)
+    // url:'../settings?id=' + this.data.e.detail.value
+    app.bgm.volume = e.detail.value
+    // console.log("bgm.volume = " + app.globalData.bgm.volume)
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  soundFXVolumeChange: function (e) {
+    console.log("Changing sound effects volume" + + e.detail.value)
+    // url:'../settings?id=' + this.data.e.detail.value
+    app.clickSound.volume = e.detail.value
+    console.log("soundFX vol:" + app.bgm.volume)
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

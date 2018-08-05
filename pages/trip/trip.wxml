@@ -5,16 +5,16 @@
     <image id="map_image" bindload="onImageLoad" style="width:{{img_width}}rpx; height:{{img_height}}vh;" src="../../images/travel_map.png" class="trip-map"></image>
   </scroll-view>
 
-  <image class='travel_pet' id='id_travel_pet' style='top:{{pet_top}}rpx;left:{{pet_left}}rpx;' src="../../images/travel_pet.png"></image>
-  <common-btn 
-    text="去旅游"
-    extra-class="go-trip-btn"
-    bindtap='onTap' 
-  ></common-btn>
-  <dialog id="dialog" title="确定领养我吗" confirmBtnText="邀请好友合养" cancelBtnText="确认领养" bind:cancelEvent="dialog_cancelEvent" bind:confirmEvent="dialog_confirmEvent"></dialog>
-  <dialog id="giftDialog" title="给我起个名字吧！" confirmBtnText="确定" cancelBtnText="返回" bind:cancelEvent="gift_cancelInputEvent" bind:confirmEvent="gift_confirmInputEvent">
+  <image class='travel_pet move' id='id_travel_pet' style='top:{{pet_top}}rpx;left:{{pet_left}}rpx;' src="../../images/travel_pet.png"></image>
+  <common-btn text="去旅游" extra-class="go-trip-btn" bindtap='onTap'></common-btn>
+  <gift_dialog id="dialog" cancelBtnText="炫耀一下" confirmBtnText="试穿" bind:confirmEvent="dialog_confirmInputEvent" bind:cancelBtnText="dialog_cancelInputEvent">
     <view>
-      <image src="../../images/travel_gift.png" style="width:200rpx;height:200rpx"></image>
+      <image src="{{trip_clothes}}" style="width:200rpx;height:200rpx"></image>
+    </view>
+  </gift_dialog>
+  <dialog id="giftDialog" confirmBtnText="打开礼物" bind:confirmEvent="gift_confirmInputEvent">
+    <view>
+      <image src="../../images/trip_gift.png" style="width:300rpx;height:300rpx"></image>
     </view>
   </dialog>
 </view>

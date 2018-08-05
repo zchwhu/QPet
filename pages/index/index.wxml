@@ -1,42 +1,62 @@
 <!--pages/index/index.wxml-->
 <view>
   <view class="header">
-      <scroll-view scroll-x class="user-container" style="width: 100%">
-        <block wx:for="{{users}}">
-            <view class="user-item">
-              <image src="{{item.avatar}}" class="user-avatar"/>
-              <view class="user-name">{{item.name}}</view>
-            </view>
-        </block>
-        <view class="add-btn">
-          <image src="../../images/btn_add.png"/>
-          <view class="add-text">Add</view>
+    <scroll-view scroll-x class="user-container" style="width: 100%">
+      <block wx:for="{{users}}">
+        <view class="user-item">
+          <image src="{{item.avatar}}" class="user-avatar" />
+          <view class="user-name">{{item.name}}</view>
         </view>
-      </scroll-view>
-      <view class="setting-btn" bindtap="onSettingBtnTap">
-        <image src="../../images/btn_setting.png"/>
-        <view class="setting-text">SET</view>
+      </block>
+      <view class="add-btn">
+        <image src="../../images/btn_add.png" />
+        <view class="add-text">Add</view>
       </view>
+    </scroll-view>
+    <view class="chat-btn" bindtap="onChatBtnTap">
+      <image src="../../images/btn_chat.png" />
+      <view class="setting-text">CHAT</view>
+    </view>
+    <view class="setting-btn" bindtap="onSettingBtnTap">
+      <image src="../../images/btn_setting.png" />
+      <view class="setting-text">SET</view>
+    </view>
   </view>
   <view class="pet-container">
     <view class="pet-btn-group">
-        <view class="pet-btn disabled" bindtap="onTripBtnTap">旅游</view>
-        <view class="pet-btn" bindtap="onBackpackBtnTap">背包</view>
-        <view class="pet-btn" bindtap="onRankBtnTap">排行榜</view>
+      <view class="pet-btn disabled" bindtap="onTripBtnTap">旅游</view>
+      <view class="pet-btn" bindtap="onBackpackBtnTap">背包</view>
+      <view class="pet-btn" bindtap="onRankBtnTap">排行榜</view>
     </view>
-    <view class="pet-image">
-      <image src="../../images/cloud.png" class="pet-talk" />
-      <image src="../../images/pet.png" class="pet-avatar"/>
+    <view class="pet-image" bindtap="onPetTap">
+      <image src="../../images/cloud.png" class="pet-talk grow" wx:if="{{talkVisible}}" />
+      <image src="../../images/pet.png" class="pet-avatar enter"/>
       <image src="../../images/pet_bg.png" class="pet-bg" />
-      <view class="pet-word">测试一下字数测试一下字数测试一下字数</view>
+      <view class="pet-word fadeIn" wx:if="{{word}}">{{word}}</view>
     </view>
     <view class="step-container">
       <view class="step-text">当前步数</view>
       <view class="step-count">
-        <image src="../../images/heart_big.png"/>
+        <image src="../../images/heart_big.png" />
         <view>1250</view>
       </view>
     </view>
+    <view class="food-container swing" wx:if="{{foodVisible}}" bindtap="onFoodTap">
+      <image src="../../images/food.png"/>
+    </view>
+    <view class="dirty-container" wx:if="{{dirtyVisible}}" bindtap="onDirtyTap">
+      <image src="../../images/dirty_big.png" class="dirty-big"/>
+      <image src="../../images/dirty_small.png" class="dirty-small"/>
+    </view>
+    <view class="tip-container" wx:if="{{tipVisible}}">
+      <image src="../../images/tip.png" class="tip-img" /> 
+      <text class="tip-text">{{tipText}}</text>   
+    </view>
   </view>
 </view>
- 
+
+<view class="talk-dialog grow-center"  wx:if="{{inputVisible}}">
+  <input bindinput="bindKeyInput" placeholder="请输入想说的话" class="talk-input"/>
+  <image src="../../images/btn_send.png" class="send-btn" bindtap="onSendTalkMsgTap"/>
+</view>
+
