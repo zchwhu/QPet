@@ -9,7 +9,8 @@
   <common-btn text="去旅游" extra-class="go-trip-btn" bindtap='onTap'></common-btn>
   <gift_dialog id="dialog" cancelBtnText="炫耀一下" confirmBtnText="试穿" bind:confirmEvent="dialog_confirmInputEvent" bind:cancelBtnText="dialog_cancelInputEvent">
     <view>
-      <image src="{{trip_clothes}}" style="width:200rpx;height:200rpx"></image>
+      <image src="http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_{{trip_cloth_index}}.png" style="width:200rpx;height:200rpx" wx:if="{{trip_cloth_index != 0}}"></image>
+      <image src="../../images/no_cloth.png" class="no-cloth-icon" wx:else />
     </view>
   </gift_dialog>
   <dialog id="giftDialog" confirmBtnText="打开礼物" bind:confirmEvent="gift_confirmInputEvent">

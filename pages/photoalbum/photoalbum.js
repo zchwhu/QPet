@@ -7,10 +7,10 @@ Page({
         { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_3.png" },
         { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_4.png" },
       ],
-      [{ ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_1.png" },
-      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_2.png" },
-      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_3.png" },
-      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_4.png" }]
+      [{ ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_5.png" },
+      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_6.png" },
+      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_7.png" },
+      { ImgUrl: "http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/dressup_8.png" }]
     ],
     screenNum: 0
   },

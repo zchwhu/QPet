@@ -54,3 +54,8 @@
 .move{
   animation: move 2.8s;
 }
+
+.no-cloth-icon{
+  width: 302rpx;
+  height: 364rpx;
+}

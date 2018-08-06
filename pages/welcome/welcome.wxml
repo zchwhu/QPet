@@ -8,7 +8,7 @@
     <view class="dialog-header">授权用户头像昵称</view>
     <view class="dialog-footer">
       <button class="dialog-cancel-btn">拒绝</button>
-      <button wx:if="{{!hasUserInfo && canIUse}}" class="dialog-confirm-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认 </button>
+      <button class="dialog-confirm-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认 </button>
     </view>
   </view>
 </view>

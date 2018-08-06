@@ -31,6 +31,7 @@ Page({
 
     console.log(nowHour)
 
+    // 根据时间判断生成食物
     if ((17 <= nowHour&& nowHour<= 19) || (6 <= nowHour&&nowHour <= 8) || (11 <= nowHour&&nowHour <= 13)) {
       this.setData({
         tipVisible: true,
@@ -50,6 +51,7 @@ Page({
     const baseUrl = app.globalData.baseUrl
     const openid = app.globalData.openid
     const that = this
+    // 请求用户初始化数据
     wx.request({
       url: baseUrl + 'getSingleUserInfo/' + openid,
       method: "GET",
@@ -63,6 +65,7 @@ Page({
         })
       }
     })
+    // 请求宠物初始化数据
     wx.request({
       url: baseUrl + 'getSinglePetInfo/' + openid,
       method: "GET",
@@ -76,19 +79,7 @@ Page({
         })
       }
     })
-    wx.request({
-      url: baseUrl + 'getranklist' ,
-      method: "GET",
-      success: function (res) {
-        console.log('rank')
-        console.log(res)
-        console.log(res.data)
-        console.log(typeof res.data)
-        that.setData({
-          // footStep:res.data.
-        })
-      }
-    })
+    
     // setTimeout(() => {
     //   this.setData({
     //     talkVisible: true,
@@ -153,30 +144,38 @@ Page({
 
   },
 
+  // 绑定旅游按钮
   onTripBtnTap: function() {
+    app.clickSound.play()
     wx.navigateTo({
       url: '../trip/trip'
     })
   },
 
+  // 绑定返回按钮
   onBackpackBtnTap: function() {
+    app.clickSound.play()
     wx.navigateTo({
       url: '../backpack/backpack'
     })
   },
 
   onRankBtnTap: function() {
+    app.clickSound.play()
     wx.navigateTo({
       url: '../rank/rank'
     })
   },
 
+  // 绑定设置按钮
   onSettingBtnTap: function() {
+    app.clickSound.play()
     wx.navigateTo({
       url: '../settings/settings'
     })
   },
 
+  // 绑定输入框事件
   bindKeyInput: function() {
     this.setData({
       inputValue: e.detail.value
@@ -184,6 +183,7 @@ Page({
     console.log(this.data.inputValue)
   },
 
+  // 绑定发送事件
   onSendTalkMsgTap: function() {
     var msg = this.data.inputValue
     if (msg) {
@@ -197,6 +197,7 @@ Page({
     })
   },
 
+  // 点击食物
   onFoodTap: function(){
     console.log('food')
     const baseUrl = app.globalData.baseUrl
@@ -220,6 +221,7 @@ Page({
     })
   },
 
+  // 点击脏脏
   onDirtyTap: function () {
     console.log('dirty')
     const baseUrl = app.globalData.baseUrl
@@ -242,6 +244,8 @@ Page({
       }
     })
   },
+
+  // 抚摸宠物
   onPetTap: function () {
     console.log('food')
     const baseUrl = app.globalData.baseUrl

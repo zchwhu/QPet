@@ -1,4 +1,6 @@
 // pages/trip/trip.js
+const app = getApp()
+
 Page({
 
   /**
@@ -40,14 +42,30 @@ Page({
     pet_stickEnable: 0,
     screen_height: 0,
     trip_begin: 1,
-    trip_clothes: "../../images/trip_clothes.png"
+    trip_clothes: "../../images/trip_clothes.png",
+    trip_cloth_index: 0,
+    hasGift: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const openid = app.globalData.openid
+    const baseUrl = app.globalData.baseUrl
+    const that = this
 
+    wx.request({
+      url: baseUrl+'getpetmap/'+openid,
+      method: "GET",
+      success: function(res){
+        console.log(res.data)
+        that.setData({
+          hasGift: res.data == '1',
+          trip_cloth_index: res.data.msg
+        })
+      }
+    })
   },
 
   /**
@@ -116,6 +134,7 @@ Page({
   onTap: function (e) {
     // console.log(e)
     // var destination = 0;
+    app.clickSound.play()
     var k = -1;
     do {
       k = Math.floor(5 * Math.random())

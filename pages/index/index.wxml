@@ -35,11 +35,14 @@
       <view class="pet-word fadeIn" wx:if="{{word}}">{{word}}</view>
     </view>
     <view class="step-container">
-      <view class="step-text">当前步数</view>
       <view class="step-count">
         <image src="../../images/heart_big.png" />
         <view>1250</view>
       </view>
+    </view>
+    <view class="foot-container">
+      <image src="../../images/foot.png" />
+      <view>346</view>
     </view>
     <view class="food-container swing" wx:if="{{foodVisible}}" bindtap="onFoodTap">
       <image src="../../images/food.png"/>

@@ -1,4 +1,6 @@
 // pages/backpack/backpack.js
+const app = getApp()
+
 Page({
 
   /**
@@ -13,16 +15,16 @@ Page({
     visible: false,
     imgs: [
       [
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/norm_1.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/norm_2.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/ssr_3.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/ssr_4.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_1.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_2.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_3.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_4.png',
       ],
       [
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/norm_1.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/norm_2.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/ssr_3.png',
-        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/ssr_4.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_5.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_6.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_7.png',
+        'http://miniproj2018-1251109379.cosgz.myqcloud.com/photograph/cloth_8.png',
       ]
     ]
   },
@@ -78,6 +80,7 @@ Page({
 
   //页面跳转进入相册
   GotoPhotograpg: function() {
+    app.clickSound.play()
     wx.navigateTo({
       url: '../photoalbum/photoalbum'
     })
@@ -101,6 +104,7 @@ Page({
   },
 
   onChangeBtnTap: function() {
+    app.clickSound.play()
     this.setData({
       visible: !this.data.visible
     })
@@ -116,6 +120,12 @@ Page({
     this.setData({
       visible: false,
       img: newUrl
+    })
+  },
+
+  backHome: function () {
+    wx.navigateTo({
+      url: '../index/index',
     })
   }
 })
