@@ -306,6 +306,9 @@ Page({
   dialog_confirmInputEvent: function () {
     var sse = "sse"
     // console.log(sse)
+      wx.navigateTo({
+        url: '../backpack/backpack',
+      })
     this.dialog.hideDialog()
   },
   dialog_cancelInputEvent: function () {

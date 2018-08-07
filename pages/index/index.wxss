@@ -290,6 +290,7 @@
   height: 60rpx;
   bottom: 10rpx;
   right: 10rpx;
+  z-index: 1000;
 }
 
 .food-container {

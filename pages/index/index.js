@@ -160,6 +160,7 @@ Page({
     })
   },
 
+  // 绑定排行榜按钮
   onRankBtnTap: function() {
     app.clickSound.play()
     wx.navigateTo({
@@ -186,11 +187,30 @@ Page({
   // 绑定发送事件
   onSendTalkMsgTap: function() {
     var msg = this.data.inputValue
-    if (msg) {
-      
-    }
+    var that = this
+    const baseUrl = app.globalData.baseUrl
+    // if (msg) {
+      this.setData({
+        inputValue: '',
+        inputVisible: false
+      });
+      wx.request({
+        url: baseUrl +'userpettalk',
+        method: "POST",
+        data: {
+          question: this.data.inputValue || '你好'
+        },
+        success: function(res){
+          that.setData({
+            word: res.data.msg,
+            talkVisible: true
+          })
+        }
+      })
+    // }
   },
 
+  // 点击对话按钮
   onChatBtnTap: function() {
     this.setData({
       inputVisible: !this.data.inputVisible

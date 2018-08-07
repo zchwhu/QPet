@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/welcome/welcome",
-    
-    "pages/guide/guide",
     "pages/trip/trip",
+    
+    "pages/index/index",
+    "pages/guide/guide",
     "pages/version/version",
     "pages/rank/rank",
     "pages/adopt/adopt",

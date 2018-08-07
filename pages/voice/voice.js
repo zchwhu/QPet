@@ -11,6 +11,7 @@ Page({
     // console.log(app.bgm.volume)
   },
 
+  // 设置背景音乐
   backgroundVolumeChange: function (e) {
     console.log("Changing bgm volume:" + e.detail.value)
     // url:'../settings?id=' + this.data.e.detail.value
@@ -18,6 +19,7 @@ Page({
     // console.log("bgm.volume = " + app.globalData.bgm.volume)
   },
 
+  // 设置音效
   soundFXVolumeChange: function (e) {
     console.log("Changing sound effects volume" + + e.detail.value)
     // url:'../settings?id=' + this.data.e.detail.value

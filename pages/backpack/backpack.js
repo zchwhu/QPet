@@ -86,6 +86,7 @@ Page({
     })
   },
 
+  // 图片预览
   imgPreview: function(e) {
     var url = e.currentTarget.dataset.url
     var urls = [];
@@ -96,13 +97,25 @@ Page({
     })
   },
 
+  // 初始化数据
   onLoad: function() {
     console.log(this.data.imgs.length * 100);
+    const baseUrl = app.globalData.baseUrl;
+    const openid = app.globalData.openid;
     this.setData({
       screenNum: this.data.imgs.length * 100
     })
+    wx.request({
+      url: baseUrl +'getpetphoto/'+openid,
+      method: "GET",
+      success: function(res){
+        console.log(res.data.msg)
+        let indexes = res.data.msg.split('-')
+      }
+    })
   },
 
+  // 点击换装按钮
   onChangeBtnTap: function() {
     app.clickSound.play()
     this.setData({
@@ -110,6 +123,7 @@ Page({
     })
   },
 
+  //更换服装
   changeCloth: function(e) {
     var url = e.currentTarget.dataset.url,
       subUrl = url.split("_")[1],
@@ -123,6 +137,7 @@ Page({
     })
   },
 
+  //返回主页
   backHome: function () {
     wx.navigateTo({
       url: '../index/index',

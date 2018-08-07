@@ -1,10 +1,5 @@
 <!--pages/voice/voice.wxml-->
 <view class="setting-container">
-  <header title="设置">
-    <view slot="header-left" class="header-back-btn">
-      <image src="../../images/btn_back.png" />
-    </view>
-  </header>
   <view class="voice-container">
     <view class="voice-setting-container">
       <view class="voice-setting-item">
